@@ -1,0 +1,34 @@
+@import "../../colors.scss";
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item {
+  box-shadow: 0 0 3px rgba(#000, 0.3);
+  padding: 8px;
+  margin: 16px 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 750px;
+}
+.power {
+  box-shadow: 0 0 3px rgba($focus, 1);
+}
+
+.labelGroup {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.bulb {
+  margin-right: 8px;
+}
+
+.powerOnOff {
+  color: #ccc;
+}

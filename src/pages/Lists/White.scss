@@ -1,0 +1,18 @@
+.slider {
+  margin-top: 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  height: 12px;
+  background: rgb(36, 27, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 231, 192, 1) 0%,
+    rgba(251, 251, 251, 1) 50%,
+    rgba(169, 240, 255, 1) 100%
+  );
+}
+
+.white {
+  margin-top: 8px;
+}
