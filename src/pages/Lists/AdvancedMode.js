@@ -4,10 +4,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from "@material-ui/core";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
-import styles from "./AdvanceMode.scss";
+import styles from "./AdvancedMode.scss";
 import Colors from "./Colors";
 import White from "./White";
-export default function AdvanceMode(props) {
+
+export default function AdvancedMode(props) {
   const [open, setOpen] = useState(true);
   const [currentTab, setTab] = useState(0);
   const { light, setRGB, setCT } = props;
@@ -16,14 +17,14 @@ export default function AdvanceMode(props) {
     setTab(newValue);
   };
   return (
-    <div className={styles.advanceMode}>
-      <div className={styles.advanceModeLabel} onClick={() => setOpen(!open)}>
-        <Typography>Advance Mode</Typography>
+    <div className={styles.advancedMode}>
+      <div className={styles.advancedModeLabel} onClick={() => setOpen(!open)}>
+        <Typography>Advanced Mode</Typography>
         <ExpandMoreOutlinedIcon />
       </div>
 
       {open && (
-        <div className={styles.advanceContainer}>
+        <div className={styles.advancedContainer}>
           <Tabs value={currentTab} onChange={handleChange}>
             <Tab label="Colors" />
             <Tab label="White" />

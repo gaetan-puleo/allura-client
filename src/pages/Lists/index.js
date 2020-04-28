@@ -4,7 +4,7 @@ import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
 import IconButton from "@material-ui/core/IconButton";
 import PowerSettingsNewOutlinedIcon from "@material-ui/icons/PowerSettingsNewOutlined";
 import { Typography } from "@material-ui/core";
-import AdvanceMode from "./AdvanceMode";
+import AdvancedMode from "./AdvancedMode";
 import Brightness from "./Brightness";
 
 import styles from "./index.scss";
@@ -49,7 +49,7 @@ export default function Lights(props) {
               <PowerSettingsNewOutlinedIcon />
             </IconButton>
             {power && (
-              <AdvanceMode setRGB={setRGB} light={light} setCT={setCT} />
+              <AdvancedMode setRGB={setRGB} light={light} setCT={setCT} />
             )}
           </div>
         );
