@@ -11,7 +11,6 @@ import styles from "./index.scss";
 
 export default function Lights(props) {
   const { lights, setPower, setBright, setRGB, setCT } = useLights();
-
   return (
     <div className={styles.list}>
       {Object.values(lights).map((light) => {
