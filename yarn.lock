@@ -807,6 +807,19 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
+"@irojs/iro-core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@irojs/iro-core/-/iro-core-1.0.0.tgz#8cbd19c699c59f70b3c3a773fb7ca2985de5f367"
+  integrity sha512-7vup43KLDtLuurfVXmhFnnNxtDVQ5JvjQglo5yZDM5DcHwSF3XeEjyeerM5nE6Me1QmAoKRGNDz4QVhzQI1OBw==
+
+"@jaames/iro@^5.1.8":
+  version "5.1.8"
+  resolved "https://registry.yarnpkg.com/@jaames/iro/-/iro-5.1.8.tgz#60f5e8a4e56931f0b195fab8c8baef6f73fc10cd"
+  integrity sha512-jsFNYbbSVDQojo9WFf54HD9QxF41FQiPDvDx3wDTLJQSydlbhCzTiGpOSrPNsCfWaqHVuq8QEStrbsXGQOhDlA==
+  dependencies:
+    "@irojs/iro-core" "^1.0.0"
+    preact "^10.0.0"
+
 "@material-ui/core@^4.0.0":
   version "4.9.11"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.11.tgz#02f45f4dbea6db191fdc0d993323d64cfae613fd"
@@ -4565,6 +4578,11 @@ posthtml@^0.12.0:
   dependencies:
     posthtml-parser "^0.4.2"
     posthtml-render "^1.2.2"
+
+preact@^10.0.0:
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.4.1.tgz#9b3ba020547673a231c6cf16f0fbaef0e8863431"
+  integrity sha512-WKrRpCSwL2t3tpOOGhf2WfTpcmbpxaWtDbdJdKdjd0aEiTkvOmS4NBkG6kzlaAHI9AkQ3iVqbFWM3Ei7mZ4o1Q==
 
 prelude-ls@~1.1.2:
   version "1.1.2"

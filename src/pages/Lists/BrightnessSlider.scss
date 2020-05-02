@@ -1,0 +1,26 @@
+@import "../../colors.scss";
+.root {
+  position: relative;
+}
+.root,
+.rail,
+.thumb,
+.track {
+  border-radius: 0;
+  height: 32px;
+  color: transparent;
+}
+
+.rail {
+  background: rgba(#000, 0.3);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.4514180672268907) 0%,
+    rgba(0, 0, 0, 0.8939950980392157) 100%
+  );
+}
+
+.thumb {
+  background-color: $lighter;
+  top: 18px;
+}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from "@material-ui/core";
@@ -11,18 +10,13 @@ import White from "./White";
 export default function AdvancedMode(props) {
   const [open, setOpen] = useState(true);
   const [currentTab, setTab] = useState(0);
-  const { light, setRGB, setCT } = props;
+  const { light, setRGB } = props;
 
   const handleChange = (event, newValue) => {
     setTab(newValue);
   };
   return (
     <div className={styles.advancedMode}>
-      <div className={styles.advancedModeLabel} onClick={() => setOpen(!open)}>
-        <Typography>Advanced Mode</Typography>
-        <ExpandMoreOutlinedIcon />
-      </div>
-
       {open && (
         <div className={styles.advancedContainer}>
           <Tabs value={currentTab} onChange={handleChange}>
@@ -33,7 +27,7 @@ export default function AdvancedMode(props) {
             <Colors light={light} setRGB={setRGB} />
           </TabPanel>
           <TabPanel value={currentTab} index={1}>
-            <White light={light} setCT={setCT} />
+            <White light={light} setRGB={setRGB} />
           </TabPanel>
         </div>
       )}
