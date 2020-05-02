@@ -22,5 +22,7 @@
 
 .thumb {
   background-color: $lighter;
-  top: 18px;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
 }
