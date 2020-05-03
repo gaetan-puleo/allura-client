@@ -10,7 +10,7 @@ export default function App(props) {
   return (
     <StylesProvider injectFirst={true}>
       <Router>
-        <div style={{ maxWidth: 400, width: "100%", margin: "auto" }}>
+        <div style={{ width: "100%" }}>
           <Switch>
             <Route exact path="/">
               <Lists
