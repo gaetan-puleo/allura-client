@@ -13,6 +13,8 @@ export default function KelvinPicker({ color, onChange }) {
             options: {
               sliderType: "kelvin",
               sliderShape: "circle",
+              minTemperature: 2000,
+              maxTemperature: 6500,
             },
           },
         ],

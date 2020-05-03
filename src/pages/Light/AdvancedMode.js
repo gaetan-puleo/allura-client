@@ -10,8 +10,7 @@ import White from "./White";
 export default function AdvancedMode(props) {
   const [open, setOpen] = useState(true);
   const [currentTab, setTab] = useState(0);
-  const { light, setRGB } = props;
-
+  const { setCT, light, setRGB } = props;
   const handleChange = (event, newValue) => {
     setTab(newValue);
   };
@@ -27,7 +26,7 @@ export default function AdvancedMode(props) {
             <Colors light={light} setRGB={setRGB} />
           </TabPanel>
           <TabPanel value={currentTab} index={1}>
-            <White light={light} setRGB={setRGB} />
+            <White light={light} setRGB={setRGB} setCT={setCT} />
           </TabPanel>
         </div>
       )}

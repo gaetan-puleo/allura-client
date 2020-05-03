@@ -11,7 +11,7 @@ import PowerButton from "../Lists/PowerButton";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 
 import styles from "./index.scss";
-export default function Light({ lights, setRGB, setBright, setPower }) {
+export default function Light({ lights, setRGB, setBright, setPower, setCT }) {
   const history = useHistory();
   const { id } = useParams();
   const light = lights[id];
@@ -32,7 +32,7 @@ export default function Light({ lights, setRGB, setBright, setPower }) {
           />
         </Toolbar>
       </AppBar>
-      <AdvancedMode light={light} setRGB={setRGB} />
+      <AdvancedMode light={light} setRGB={setRGB} setCT={setCT} />
       <div className={styles.brightness}>
         <WbSunnyIcon className={styles.sun} />
         <BrightnessSlider light={light} setBright={setBright} />
