@@ -19,7 +19,7 @@ export default function AdvancedMode(props) {
     <div className={styles.advancedMode}>
       {open && (
         <div className={styles.advancedContainer}>
-          <Tabs value={currentTab} onChange={handleChange}>
+          <Tabs value={currentTab} variant="fullWidth" onChange={handleChange}>
             <Tab label="Colors" />
             <Tab label="White" />
           </Tabs>

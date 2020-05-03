@@ -15,3 +15,9 @@ html {
   color: #fff;
   box-sizing: border-box;
 }
+
+:global {
+  .MuiSlider-thumb:after {
+    display: none;
+  }
+}
