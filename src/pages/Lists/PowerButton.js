@@ -12,7 +12,7 @@ export default function PowerButton({ light, setPower, className }) {
       }}
       onChange={(e) => {
         setPower({ power: e.target.checked, id: light.id });
-        window.navigator.vibrate(300);
+        window.navigator.vibrate(100);
       }}
       color="primary"
     />
