@@ -1,5 +1,6 @@
 import { ROOT_URL } from "../constants/url";
-import axios from "axios";
+import axios from "redaxios";
+
 export default function getLights() {
   return axios({
     method: "get",
@@ -7,12 +8,14 @@ export default function getLights() {
   });
 }
 
+
 export function getLightById(id) {
   return axios({
     method: "get",
     url: ROOT_URL + ":3000/lights/" + id,
   });
 }
+
 
 export function setPowerById(id, power) {
   return axios({

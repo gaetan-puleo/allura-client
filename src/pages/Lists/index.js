@@ -7,7 +7,11 @@ export default function Lights(props) {
   return (
     <div className={styles.list}>
       {Object.values(lights).map((light) => {
-        return <Card light={light} setPower={setPower} setBright={setBright} />;
+        return <Card 
+          key={light.id} 
+          light={light} 
+          setPower={setPower} 
+          setBright={setBright} />;
       })}
     </div>
   );
