@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import AdvancedMode from "./AdvancedMode";
-import Toolbar from "@material-ui/core/Toolbar";
-import Card from "../Lists/Card";
-import AppBar from "@material-ui/core/AppBar";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import IconButton from "@material-ui/core/IconButton";
 import BrightnessSlider from "../Lists/BrightnessSlider";
 import PowerButton from "../Lists/PowerButton";
-import WbSunnyIcon from "@material-ui/icons/WbSunny";
+import CircleButton from '../../components/CircleButton'
+import {FiArrowLeft} from 'react-icons/fi'
+import {MdWbSunny} from 'react-icons/md';
 
-import styles from "./index.scss";
 export default function Light({ lights, setRGB, setBright, setPower, setCT }) {
   const history = useHistory();
   const { id } = useParams();
@@ -20,21 +16,18 @@ export default function Light({ lights, setRGB, setBright, setPower, setCT }) {
   }
   return (
     <>
-      <AppBar position="static" color={"transparent"} elevation={0}>
-        <Toolbar>
-          <IconButton edge="start" onClick={() => history.goBack()}>
-            <ArrowBackIcon style={{ color: "#fff" }} />
-          </IconButton>
+      <header className='flex w-full items-center h-12 px-4'>
+        <CircleButton onClick={() => history.goBack()}><FiArrowLeft className='w-6 h-6' /></CircleButton>
           <PowerButton
-            className={styles.power}
+            className={'ml-auto'}
             light={light}
             setPower={setPower}
           />
-        </Toolbar>
-      </AppBar>
+      </header>
+   
       <AdvancedMode light={light} setRGB={setRGB} setCT={setCT} />
-      <div className={styles.brightness}>
-        <WbSunnyIcon className={styles.sun} />
+      <div className={'mt-6 flex items-center px-10'}>
+        <MdWbSunny className={'mr-4'} />
         <BrightnessSlider light={light} setBright={setBright} />
       </div>
     </>

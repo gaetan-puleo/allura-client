@@ -1,10 +1,11 @@
 import React from "react";
-import Switch from "@material-ui/core/Switch";
-
+import Toggle from '../../components/Toggle'
 export default function PowerButton({ light, setPower, className }) {
   return (
-    <Switch
-      className={`${className}`}
+    <Toggle
+      id={light.id}
+      name={light.id}
+      className={className}
       checked={light.power}
       onClick={(e) => {
         e.stopPropagation();
@@ -14,7 +15,6 @@ export default function PowerButton({ light, setPower, className }) {
         setPower({ power: e.target.checked, id: light.id });
         window.navigator.vibrate(100);
       }}
-      color="primary"
     />
   );
 }

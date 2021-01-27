@@ -1,24 +1,6 @@
 @import "./colors.scss";
 
-* {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
 
 html {
-  background: $darker;
-  // background: red;
-  color: #fff;
-  box-sizing: border-box;
-}
-
-:global {
-  .MuiSlider-thumb:after {
-    display: none;
-  }
+ 
 }

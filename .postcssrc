@@ -1,9 +1,6 @@
 {
-  "modules": true,
+  "modules": false,
   "plugins": {
-    "postcss-modules": {
-      "generateScopedName": "_[name]__[local]"
-    },
     "tailwindcss": {},
     "autoprefixer": {
       "grid": true

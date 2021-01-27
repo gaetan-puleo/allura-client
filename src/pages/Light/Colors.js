@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./Colors.scss";
 import iro from "@jaames/iro";
-import { Typography } from "@material-ui/core";
 
 export default function Colors(props) {
   const { setRGB, light } = props;
@@ -20,10 +18,9 @@ export default function Colors(props) {
     }
   }, [pickerRef.current]);
   return (
-    <div className={styles.colors}>
-      <div className={styles.choose}>
-        <div className={styles.label}></div>
-        <div className={styles.huePicker} ref={pickerRef}></div>
+    <div className={'mt-4'}>
+      <div className={'width-full'}>
+        <div className={'mt-8 flex relative justify-center width-full'} ref={pickerRef}></div>
       </div>
     </div>
   );

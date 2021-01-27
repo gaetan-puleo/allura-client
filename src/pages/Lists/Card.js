@@ -1,19 +1,18 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
+import React, {useState} from "react";
 import PowerButton from "./PowerButton";
-import styles from "./Card.scss";
 import { useHistory } from "react-router-dom";
 import BrightnessSlider from "./BrightnessSlider";
-
+import Toggle from '../../components/Toggle';
 export default function Card({ light, setPower, setBright }) {
   const { power, rgb } = light;
   const history = useHistory();
+  const [checked, setChecked] = useState(false);
   const border = power
     ? `4px solid rgba(${rgb.r},${rgb.g},${rgb.b}, 1 )`
     : `4px solid transparent`;
   return (
     <section
-      className={styles.card}
+      className='shadow p-4 w-full'
       onClick={() => {
         history.push("/light/" + light.id);
       }}
@@ -21,10 +20,10 @@ export default function Card({ light, setPower, setBright }) {
         borderLeft: border,
       }}
     >
-      <header className={styles.header}>
-        <Typography>{light.id}</Typography>
+      <header className='flex items-center'>
+        <p>{light.id}</p>
         <PowerButton
-          className={styles.power}
+          className="ml-auto"
           light={light}
           setPower={setPower}
         />

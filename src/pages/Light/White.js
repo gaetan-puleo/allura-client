@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import KelvinPicker from "../../components/KelvinPicker";
-import styles from "./White.scss";
 
 export default function White(props) {
   const { light, setRGB, setCT } = props;
@@ -8,8 +7,8 @@ export default function White(props) {
     Number(localStorage.getItem("ct" + light.id)) || 5000
   );
   return (
-    <div className={styles.white}>
-      <div className={styles.picker}>
+    <div className={'mt-4'}>
+      <div className={'mt-8 flex justify-center'}>
         <KelvinPicker
           color={light.rgb}
           onChange={(c) => {
