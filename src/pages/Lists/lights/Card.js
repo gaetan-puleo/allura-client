@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import PowerButton from "./PowerButton";
+import PowerButton from "../PowerButton";
 import { useHistory } from "react-router-dom";
-import BrightnessSlider from "./BrightnessSlider";
-import Toggle from '../../components/Toggle';
+import BrightnessSlider from "../BrightnessSlider";
+
 export default function Card({ light, setPower, setBright }) {
   const { power, rgb } = light;
   const history = useHistory();

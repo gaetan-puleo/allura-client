@@ -8,7 +8,6 @@ export default function getLights() {
   });
 }
 
-
 export function getLightById(id) {
   return axios({
     method: "get",

@@ -1,7 +1,17 @@
+export function removeLightGroup(name) {
+    localStorage.removeItem(name);
+}
+
 export function getLightGroup(name) {
-    return JSON.parse(localStorage.getItem('light-' +  id))
+    JSON.parse(localStorage.getItem(name));
 }
 
 export function setLightGroup(name, lights) {
-    localStorage.setItem('light-' +  id, JSON.stringify(light))
+    localStorage.setItem(name, JSON.stringify(lights))
+}
+
+export function listLightGroups() {
+    return Object.entries(localStorage)
+    .filter(([key]) => key.substring(0,5) === 'group')
+    .map(([key, values]) => [key,JSON.parse(values)])
 } 
