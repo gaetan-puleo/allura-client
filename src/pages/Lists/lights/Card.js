@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import PowerButton from "../PowerButton";
 import { useHistory } from "react-router-dom";
 import BrightnessSlider from "../BrightnessSlider";
+import useLight from '../../../hooks/useLight';
 
 export default function Card({ light, setPower, setBright }) {
   const { power, rgb } = light;
   const history = useHistory();
-  const [checked, setChecked] = useState(false);
+  const {name} = useLight(light.id);
   const border = power
     ? `4px solid rgba(${rgb.r},${rgb.g},${rgb.b}, 1 )`
     : `4px solid transparent`;
@@ -21,7 +22,7 @@ export default function Card({ light, setPower, setBright }) {
       }}
     >
       <header className='flex items-center'>
-        <p>{light.id}</p>
+        <p>{name || light.id}</p>
         <PowerButton
           className="ml-auto"
           light={light}

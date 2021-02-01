@@ -5,7 +5,7 @@ export default function getLights() {
   return axios({
     method: "get",
     url: ROOT_URL + ":3000/lights",
-  });
+  })
 }
 
 export function getLightById(id) {

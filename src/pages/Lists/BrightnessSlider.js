@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Range, getTrackBackground} from 'react-range';
+import {Range} from 'react-range';
 
 const MIN = 0;
 const MAX = 100;
@@ -18,15 +18,10 @@ export default function BrightnessSlider(props) {
           className={'w-full h-6 relative flex items-center my-4'}
         >
           <div ref={props.ref}
-          className='w-full h-4 rounded-lg'
+          className='w-full h-6 '
             style={
               {
-                background: getTrackBackground({
-                  values: [sliderBright],
-                  colors: ['#548BF4', '#ccc'],
-                  min: MIN,
-                  max: MAX
-                }),
+                background: `linear-gradient(to right,rgba(255,255,255,0.1) 0%, rgba(255,255,255,${sliderBright / 100}) ${sliderBright}%, #010101 ${sliderBright}% ,#010101 100%)`,
               }
             }
           >
@@ -34,7 +29,7 @@ export default function BrightnessSlider(props) {
         </div>
       }}
       renderThumb={({props, children}) => {
-        return <div {...props} className='w-4 h-4 bg-gray-100 rounded-full' >
+        return <div {...props} className='w-6 h-6 bg-gray-100 rounded-full' >
           {children}
         </div>
       }}

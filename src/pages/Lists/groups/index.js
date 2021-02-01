@@ -11,7 +11,7 @@ export default function Groups (props) {
     const [show, setShow] = useState(true)
     return (
     <section className='w-full my-4'>
-        <header onClick={() => setShow(!show)} className='w-full h-6 font-bold font-lg flex justify-center items-center mb-4'>
+        <header onClick={() => setShow(!show)} className='select-none w-full h-6 font-bold font-lg flex justify-center items-center mb-4'>
             <h2 className="w-full text-left">All Groups</h2>
             {show && <FaAngleUp />}
             {!show && <FaAngleDown />}
