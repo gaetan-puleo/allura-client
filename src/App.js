@@ -33,7 +33,7 @@ export default function App(props) {
                 }}
               />
             </Route>
-            <Route path="/light-group/:id">
+            {/* <Route path="/light-group/:id">
               <Group
                 {...{
                   lights,
@@ -43,7 +43,7 @@ export default function App(props) {
                   setCT,
                 }}
               />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
       </Router>
