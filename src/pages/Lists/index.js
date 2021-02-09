@@ -8,7 +8,7 @@ export default function Lists(props) {
   return (
     <div className={'w-full flex flex-col items-center p-4'}>
       <Lights lights={lights} setPower={setPower} setBright={setBright}  />
-      {/* <Groups lights={lights} setPower={setPower} setBright={setBright}  /> */}
+      <Groups lights={lights} setPower={setPower} setBright={setBright}  />
     </div>
   );
 }

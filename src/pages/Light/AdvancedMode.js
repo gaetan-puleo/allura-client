@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import {Tabs, Tab} from '../../components/Tabs';
 import Colors from "./Colors";
 import White from "./White";
+import BrightnessSlider from "../Lists/BrightnessSlider";
+import {MdWbSunny} from 'react-icons/md';
 
 export default function AdvancedMode(props) {
-  const [open, setOpen] = useState(true);
   const [currentTab, setTab] = useState(0);
-  const { setCT, light, setRGB } = props;
+  const { setCT, light, setRGB, setBright } = props;
 
   return (
     <div className={'flex flex-wrap items-center w-full'}>
-      {open && (
         <div className={'w-full'}>
           <Tabs value={currentTab} variant="fullWidth" >
             <Tab label="Colors" active={currentTab === 0} onChange={setTab.bind(null, 0)}/>
@@ -18,18 +18,25 @@ export default function AdvancedMode(props) {
           </Tabs>
           <TabPanel value={currentTab} index={0}>
             <Colors light={light} setRGB={setRGB} />
+            <div className={'mt-6 flex items-center px-10'}>
+              <MdWbSunny className='mr-2 h-6 w-6 ' />
+              <BrightnessSlider light={light} setBright={setBright} />
+            </div>
           </TabPanel>
           <TabPanel value={currentTab} index={1}>
             <White light={light} setRGB={setRGB} setCT={setCT} />
+            <div className={'mt-6 flex items-center px-10'}>
+              <MdWbSunny className='mr-2 h-6 w-6 ' />
+              <BrightnessSlider light={light} setBright={setBright} />
+            </div>
           </TabPanel>
         </div>
-      )}
     </div>
   );
 }
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index} = props;
 
   return (
     <div>

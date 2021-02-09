@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import KelvinPicker from "../../components/KelvinPicker";
 
 export default function White(props) {
-  const { light, setRGB, setCT } = props;
-  const [localCT, setLocalCT] = useState(
-    Number(localStorage.getItem("ct" + light.id)) || 5000
-  );
+  const { light, setCT } = props;
+
   return (
     <div className={'mt-4'}>
       <div className={'mt-8 flex justify-center'}>
