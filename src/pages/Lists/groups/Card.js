@@ -7,7 +7,9 @@ import {FaTrash} from 'react-icons/fa';
 import CircleButton from '../../../components/CircleButton'
 import {removeLightGroup} from '../../../services/groups'
 
-export default function Card({ lights, setPower, groupId , deleteGroup}) {
+export default function Card({ lights, name, setPower, groupId , deleteGroup}) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [tempName, setTempName] = useState(name);
   // const [deleted, setDeleted] = useState(false)
   // const { power, rgb } = light;
   const history = useHistory();
@@ -18,6 +20,7 @@ export default function Card({ lights, setPower, groupId , deleteGroup}) {
   //   setDeleted(true);
   //   removeLightGroup(groupId);
   // }
+  console.log(name)
 
   return (
     <section
@@ -25,7 +28,8 @@ export default function Card({ lights, setPower, groupId , deleteGroup}) {
       className='shadow p-4 w-full'
     >
       <header className='flex items-center'>
-        <div>{groupId}</div>
+        {!isEditing && <div>{groupId || name}</div>}
+        {isEditing && <div><input autoFocus value={tempName}  /></div>}
         {/* <PowerButton
           className="ml-auto"
           light={light}
@@ -36,7 +40,7 @@ export default function Card({ lights, setPower, groupId , deleteGroup}) {
             deleteGroup()
           }}>
             <FaTrash className='w-4 h-4' />
-          </CircleButton>
+        </CircleButton>
 
       </header>
 

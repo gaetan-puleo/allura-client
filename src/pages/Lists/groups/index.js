@@ -18,12 +18,13 @@ export default function Groups (props) {
         </header>
         {show && <div className='w-full'>
             { 
-                lightGroups.map(({name, lights:lightsIds}) => {
+                lightGroups.map(({id, lights:lightsIds, name}) => {
                     return (
                     <Card 
-                        key={name} 
-                        groupId={name} 
-                        deleteGroup={deleteGroup.bind(null, name)} 
+                        name={name}
+                        key={id} 
+                        groupId={id} 
+                        deleteGroup={deleteGroup.bind(null, id)} 
                         lights={Object.values(lights).filter(light => lightsIds.includes(light))} 
                     />
                     )
@@ -31,8 +32,8 @@ export default function Groups (props) {
             } 
             <footer>
                 <button className='bg-blue-600 border-none py-3 px-8 rounded-3xl focus:outline-none active:bg-blue-500 mt-4 mx-auto block' onClick={() => {
-                    const group = `group_${Date.now()}`
-                    upsertGroup(group, [])
+                    const groupId = `group_${Date.now()}`
+                    upsertGroup(groupId, {lights:[]})
                 }}>Add a Group</button>
             </footer>
         </div>}

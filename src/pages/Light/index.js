@@ -48,9 +48,10 @@ export default function Light({ lights, setRGB, setBright, setPower, setCT }) {
           <>
             <CircleButton className='mr-4' onClick={() => history.goBack()}><FiArrowLeft className='w-6 h-6' /></CircleButton>
             {!editable && <div>{name || id}</div>}
-            {editable && <input 
+            {editable && <input
+              autoFocus
               className={' p-1 bg-gray-900 border-b border-gray-500 border-solid focus:border-gray-300'} 
-              placeholder='enter a new name' 
+              placeholder='enter a new name'
               type='text' 
               onChange={(e) => setEdit(e.target.value)} 
               value={edit}/>}

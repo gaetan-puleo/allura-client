@@ -2,12 +2,12 @@ export function removeLightGroup(name) {
     localStorage.removeItem(name);
 }
 
-export function getLightGroup(name) {
-    JSON.parse(localStorage.getItem(name));
+export function getLightGroup(id) {
+    JSON.parse(localStorage.getItem(id));
 }
 
-export function setLightGroup(name, lights) {
-    localStorage.setItem(name, JSON.stringify({name, lights}))
+export function setLightGroup(id, {lights, name = ''}) {
+    localStorage.setItem(id, JSON.stringify({name, id, lights}))
 }
 
 export function listLightGroups() {

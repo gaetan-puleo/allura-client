@@ -1,19 +1,27 @@
 import { useState, useEffect } from "react";
-import {listLightGroups, setLightGroup, removeLightGroup} from "../../../services/groups";
+import {
+    listLightGroups, 
+    setLightGroup, 
+    removeLightGroup
+} from "../../../services/groups";
 export default function useGroups() {
     const [groups, setGroups] = useState(null);
 
-    const upsertGroup = (name, lights = []) => {
-        setLightGroup(name, lights);
+    const upsertGroup = (id, group) => {
+        setLightGroup(id, group);
         const newGroups = {...groups};
-        newGroups[name] = {name,  lights};
+        newGroups[id] = {
+            id, 
+            lights:group.lights,
+            name: group.name
+        };
         setGroups(newGroups);
     };
 
-    const deleteGroup = (name) => {
-        removeLightGroup(name);
+    const deleteGroup = (id) => {
+        removeLightGroup(id);
         const newGroups = {...groups};
-        delete newGroups[name];
+        delete newGroups[id];
         setGroups(newGroups)
     };
 
@@ -21,7 +29,7 @@ export default function useGroups() {
         if(!groups) {
             // set the group
             setGroups(listLightGroups().reduce((acc, current) => {
-                return {...acc, [current.name] : current}
+                return {...acc, [current.id] : current}
             }, {}))
         }
     }, [groups, upsertGroup, deleteGroup])
