@@ -20,7 +20,6 @@ export default function Card({ lights, name, setPower, groupId , deleteGroup}) {
   //   setDeleted(true);
   //   removeLightGroup(groupId);
   // }
-  console.log(name)
 
   return (
     <section
