@@ -6,7 +6,7 @@ export default function useGroups() {
     const upsertGroup = (name, lights = []) => {
         setLightGroup(name, lights);
         const newGroups = {...groups};
-        newGroups[name] = [name,  lights];
+        newGroups[name] = {name,  lights};
         setGroups(newGroups);
     };
 
@@ -21,7 +21,7 @@ export default function useGroups() {
         if(!groups) {
             // set the group
             setGroups(listLightGroups().reduce((acc, current) => {
-                return {...acc, [current[0]] : current[1]}
+                return {...acc, [current.name] : current}
             }, {}))
         }
     }, [groups, upsertGroup, deleteGroup])

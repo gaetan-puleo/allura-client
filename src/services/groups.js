@@ -7,11 +7,11 @@ export function getLightGroup(name) {
 }
 
 export function setLightGroup(name, lights) {
-    localStorage.setItem(name, JSON.stringify(lights))
+    localStorage.setItem(name, JSON.stringify({name, lights}))
 }
 
 export function listLightGroups() {
     return Object.entries(localStorage)
     .filter(([key]) => key.substring(0,5) === 'group')
-    .map(([key, values]) => [key,JSON.parse(values)])
+    .map(([key,values]) => JSON.parse(values))
 } 

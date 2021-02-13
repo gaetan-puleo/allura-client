@@ -6,7 +6,7 @@ import useGroups from './useGroup';
 export default function Groups (props) {
     const {groups, upsertGroup, deleteGroup} = useGroups();
 
-    lightGroups = groups ? Object.entries(groups) : [];
+    lightGroups = groups ? Object.values(groups) : [];
     const {lights, setBright, setPower} = props;
     const [show, setShow] = useState(true)
     return (
@@ -17,8 +17,8 @@ export default function Groups (props) {
             {!show && <FaAngleDown />}
         </header>
         {show && <div className='w-full'>
-            {
-                lightGroups.map(([name, lightsIds]) => {
+            { 
+                lightGroups.map(({name, lights:lightsIds}) => {
                     return (
                     <Card 
                         key={name} 
@@ -28,14 +28,7 @@ export default function Groups (props) {
                     />
                     )
                 })
-            }
-            {/* {Object.values(lights).map((light) => {
-            return <Card 
-                key={light.id} 
-                light={light} 
-                setPower={setPower} 
-                setBright={setBright} />;
-            })} */}
+            } 
             <footer>
                 <button className='bg-blue-600 border-none py-3 px-8 rounded-3xl focus:outline-none active:bg-blue-500 mt-4 mx-auto block' onClick={() => {
                     const group = `group_${Date.now()}`

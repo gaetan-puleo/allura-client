@@ -18,18 +18,15 @@ export default function AdvancedMode(props) {
           </Tabs>
           <TabPanel value={currentTab} index={0}>
             <Colors light={light} setRGB={setRGB} />
-            <div className={'mt-6 flex items-center px-10'}>
-              <MdWbSunny className='mr-2 h-6 w-6 ' />
-              <BrightnessSlider light={light} setBright={setBright} />
-            </div>
           </TabPanel>
           <TabPanel value={currentTab} index={1}>
             <White light={light} setRGB={setRGB} setCT={setCT} />
-            <div className={'mt-6 flex items-center px-10'}>
-              <MdWbSunny className='mr-2 h-6 w-6 ' />
-              <BrightnessSlider light={light} setBright={setBright} />
-            </div>
           </TabPanel>
+          <div className={'mt-6 flex items-center px-10'}>
+            <MdWbSunny className='mr-2 h-6 w-6 ' />
+            <BrightnessSlider light={light} setBright={setBright} />
+          </div>
+
         </div>
     </div>
   );

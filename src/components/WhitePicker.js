@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import iro from "@jaames/iro";
 
-export default function KelvinPicker({ color, onChange }) {
+export default function WhitePicker({ color, onChange }) {
   const pickerRef = useRef(null);
   const picker = useRef(null);
   
@@ -24,5 +24,5 @@ export default function KelvinPicker({ color, onChange }) {
       picker.current.on("input:end", onChange);
     }
   }, [pickerRef.current]);
-  return <div ref={pickerRef}></div>;
+  return <div style={{height:300}} ref={pickerRef}></div>;
 }
