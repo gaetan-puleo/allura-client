@@ -6,9 +6,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['checked'],
       borderColor: ['checked'],
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'checked'],
+      ringColor: ['active', 'checked'],
     }
   },
   plugins: [],

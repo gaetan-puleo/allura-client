@@ -3,7 +3,8 @@ import PowerButton from "../PowerButton";
 import { useHistory } from "react-router-dom";
 import {Link} from 'react-router-dom';
 import BrightnessSlider from "../BrightnessSlider";
-import {FaTrash} from 'react-icons/fa';
+import {FaTrash, FaPen, FaSave} from 'react-icons/fa';
+
 import CircleButton from '../../../components/CircleButton'
 import {removeLightGroup} from '../../../services/groups'
 
@@ -28,15 +29,33 @@ export default function Card({ lights, name, setPower, groupId , deleteGroup}) {
     >
       <header className='flex items-center'>
         {!isEditing && <div>{groupId || name}</div>}
-        {isEditing && <div><input autoFocus value={tempName}  /></div>}
+        {isEditing && <div>
+          <input autoFocus value={tempName} />
+        </div>}
         {/* <PowerButton
           className="ml-auto"
           light={light}
           setPower={setPower}
         /> */}
-        <CircleButton className='ml-auto' onClick={(evt) => {
+        {!isEditing && <CircleButton 
+          className='ml-auto' 
+          onClick={(evt) => {
             evt.stopPropagation();
-            deleteGroup()
+            setIsEditing(true);
+          }}>
+            <FaPen className='w-4 h-4' />
+          </CircleButton>
+        }
+        {isEditing && <CircleButton className='ml-auto' onClick={(evt) => {
+          evt.stopPropagation();
+          setIsEditing(false);
+        }}>
+            <FaSave className='w-4 h-4' />
+          </CircleButton>
+        }
+        <CircleButton className={`m-4`} onClick={(evt) => {
+            evt.stopPropagation();
+            deleteGroup();
           }}>
             <FaTrash className='w-4 h-4' />
         </CircleButton>

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {FaAngleDown, FaAngleUp} from 'react-icons/fa';
 import Card from './Card';
 import useGroups from './useGroup';
+import Button from '../../../components/Button';
 
 export default function Groups (props) {
     const {groups, upsertGroup, deleteGroup} = useGroups();
@@ -31,10 +32,10 @@ export default function Groups (props) {
                 })
             } 
             <footer>
-                <button className='bg-blue-600 border-none py-3 px-8 rounded-3xl focus:outline-none active:bg-blue-500 mt-4 mx-auto block' onClick={() => {
+                <Button onClick={() => {
                     const groupId = `group_${Date.now()}`
                     upsertGroup(groupId, {lights:[]})
-                }}>Add a Group</button>
+                }}>Add a Group</Button>
             </footer>
         </div>}
     </section>

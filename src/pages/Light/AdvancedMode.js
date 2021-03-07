@@ -26,7 +26,6 @@ export default function AdvancedMode(props) {
             <MdWbSunny className='mr-2 h-6 w-6 ' />
             <BrightnessSlider light={light} setBright={setBright} />
           </div>
-
         </div>
     </div>
   );
