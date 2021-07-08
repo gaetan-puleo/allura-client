@@ -9,23 +9,24 @@
     "serve": "yarn build && http-server ./dist/ "
   },
   "dependencies": {
-    "@jaames/iro": "^5.3.1",
-    "@types/react": "^17.0.0",
-    "autoprefixer": "^10.2.3",
-    "parcel": "^2.0.0-nightly.551",
-    "postcss-modules": "^4.0.0",
+    "@jaames/iro": "^5.5.2",
+    "@types/react": "^17.0.14",
+    "autoprefixer": "^10.2.6",
+    "parcel": "^2.0.0-beta.2",
+    "postcss-modules": "^4.1.3",
     "rc-slider": "^9.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-range": "^1.8.9",
     "react-router-dom": "^5.2.0",
-    "redaxios": "^0.3.0",
-    "swr": "^0.4.0",
-    "tailwindcss": "^2.0.2"
+    "redaxios": "^0.4.1",
+    "swr": "^0.5.6",
+    "tailwindcss": "^2.2.4"
   },
   "devDependencies": {
-    "postcss": "^8.2.4",
-    "sass": "^1.32.5"
+    "@parcel/transformer-sass": "2.0.0-beta.2",
+    "postcss": "^8.3.5",
+    "sass": "^1.35.2"
   }
 }
